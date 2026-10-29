@@ -1,0 +1,11 @@
+{
+  "accepted_segments": [
+    "seg-0000000000000001.log"
+  ],
+  "rejected_segments": [],
+  "ignored_temp_files": [],
+  "compactions": [],
+  "discarded_transactions": [],
+  "committed_transaction_count": 1,
+  "deduplicated_record_count": 0
+}
