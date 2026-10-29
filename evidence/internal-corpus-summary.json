@@ -1,0 +1,6 @@
+{
+  "scope": "Internal verification against the previously supplied synthetic corpus. Inputs and per-case expected files are not distributed.",
+  "passed": 149,
+  "total": 149,
+  "all_passed": true
+}

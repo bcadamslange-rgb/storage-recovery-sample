@@ -1,0 +1,54 @@
+[
+  {
+    "control": "physical_order",
+    "build_succeeded": true,
+    "cases_passed": 30,
+    "cases_total": 64,
+    "failed_public_cases": [
+      "logical_order_beats_filename",
+      "logical_order_seeded_00",
+      "logical_order_seeded_02",
+      "logical_order_seeded_03",
+      "logical_order_seeded_04",
+      "logical_order_seeded_05",
+      "logical_order_seeded_06",
+      "logical_order_seeded_07",
+      "logical_order_seeded_08",
+      "logical_order_seeded_09",
+      "logical_order_seeded_10",
+      "logical_order_seeded_12",
+      "logical_order_seeded_13",
+      "logical_order_seeded_14",
+      "logical_order_seeded_15",
+      "logical_order_seeded_17",
+      "logical_order_seeded_18",
+      "logical_order_seeded_19",
+      "logical_order_seeded_20",
+      "logical_order_seeded_22",
+      "logical_order_seeded_23",
+      "logical_order_seeded_24",
+      "logical_order_seeded_25",
+      "logical_order_seeded_26",
+      "logical_order_seeded_27",
+      "logical_order_seeded_29",
+      "logical_order_seeded_30",
+      "logical_order_seeded_31",
+      "logical_order_seeded_32",
+      "logical_order_seeded_33",
+      "logical_order_seeded_36",
+      "logical_order_seeded_37",
+      "logical_order_seeded_38",
+      "logical_order_seeded_39"
+    ]
+  },
+  {
+    "control": "crc_omission",
+    "build_succeeded": true,
+    "cases_passed": 62,
+    "cases_total": 64,
+    "failed_public_cases": [
+      "bad_crc_delete_stops_scan",
+      "bad_crc_abort_stops_scan"
+    ]
+  }
+]
