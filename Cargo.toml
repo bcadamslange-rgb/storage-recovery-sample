@@ -1,0 +1,8 @@
+[package]
+name = "kvrecover"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "kvrecover"
+path = "src/main.rs"

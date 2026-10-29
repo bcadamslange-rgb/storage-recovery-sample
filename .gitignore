@@ -1,0 +1,9 @@
+**/target/
+**/__pycache__/
+**/.venv/
+.DS_Store
+Thumbs.db
+*.tmp
+*.zip
+**/results/
+!**/evidence/
