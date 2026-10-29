@@ -1,0 +1,37 @@
+name: Verify recovery
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Record tool versions
+        run: |
+          rustc --version
+          cargo --version
+          python3 --version
+      - name: Build without crate downloads
+        run: cargo build --release --locked --offline
+      - name: Check exact recovery behavior
+        run: python3 tests/verify.py --binary target/release/kvrecover
+      - name: Reject incorrect implementations
+        run: python3 scripts/check_negative_controls.py
+      - name: Build the container
+        run: docker build -t recovery-demo .
+      - name: Exercise the container
+        run: |
+          mkdir -p results/container
+          docker run --rm --user "$(id -u):$(id -g)" -v "$PWD/examples/visible-inputs/basic_commit_and_delete:/input:ro" -v "$PWD/results/container:/output" recovery-demo --segments /input --out-state /output/state.json --out-report /output/report.json
+          python3 -c 'import json; from pathlib import Path; s=json.loads(Path("results/container/state.json").read_text()); r=json.loads(Path("results/container/report.json").read_text()); assert s["count"] == len(s["entries"]); assert "accepted_segments" in r'
