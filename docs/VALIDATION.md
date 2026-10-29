@@ -17,7 +17,13 @@ The public cases include base64 padding for one, two and three zero bytes, Unico
 
 The internal corpus is separate evidence, not a public test suite. No protected fixture files are distributed. Passing both suites is evidence for the stated contract, not a mathematical proof for arbitrary inputs.
 
-Not executed: Docker image build/run, a native Windows Rust build, and any external assessment-platform verification.
+The local Docker engine was stopped during the original preparation. A native Windows Rust build remains untested.
+
+## Hosted verification
+
+On 29 October 2026, [workflow run 1](https://github.com/bcadamslange-rgb/storage-recovery-sample/actions/runs/40826669614) succeeded for commit `42644f6412689f4b88ec3d03f11d6ee758b7bfd2`. The hosted environment reported rustc 1.99.1, cargo 1.99.1 and Python 3.12.3.
+
+The run built the executable without crate downloads, passed the public verification suite, rejected both incorrect implementations, built the Docker image and ran recovery on the commit-and-delete example using a read-only input mount. The container check required successful exit, readable state/report JSON, a count matching the number of entries, and an accepted-segments report field. This container check is a smoke test; exact-output checks run against the native executable.
 
 The demonstration video is a paced replay of the recorded executable results. It is not a screen capture of a live terminal and does not claim real-time execution speed.
 
