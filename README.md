@@ -1,5 +1,7 @@
 # Crash-safe storage recovery
 
+[![Verify recovery](https://github.com/bcadamslange-rgb/storage-recovery-sample/actions/workflows/verify.yml/badge.svg)](https://github.com/bcadamslange-rgb/storage-recovery-sample/actions/workflows/verify.yml)
+
 A small storage service has lost its in-memory index during interrupted compaction. Its append-only segment files remain, with potentially torn records. This exercise reconstructs the durable state and explains the recovery decisions in machine-readable JSON.
 
 The wire format is invented. All sample records are synthetic. See [scope](SCOPE.md).
@@ -46,7 +48,7 @@ mkdir -p results/container
 docker run --rm --user "$(id -u):$(id -g)" -v "$PWD/examples/visible-inputs/basic_commit_and_delete:/input:ro" -v "$PWD/results/container:/output" storage-recovery --segments /input --out-state /output/state.json --out-report /output/report.json
 ```
 
-The image defaults to an unprivileged user. The Linux example runs as the current host user so the output bind mount is writable without broadening directory permissions. Run it from a normal non-root account. The container build/run was not executed because the local Docker engine was stopped; do not interpret the presence of this recipe as container proof.
+The image defaults to an unprivileged user. The Linux example runs as the current host user so the output bind mount is writable without broadening directory permissions. Run it from a normal non-root account. The container build and sample recovery passed in [GitHub Actions](https://github.com/bcadamslange-rgb/storage-recovery-sample/actions/runs/40826669614). See the validation record for the exact scope of the checks.
 
 ## Continuous verification
 
