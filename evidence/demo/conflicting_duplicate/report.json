@@ -1,0 +1,12 @@
+{
+  "error": "conflicting_duplicate",
+  "detail": {
+    "commit_seq": 9,
+    "op_index": 0,
+    "key": "item",
+    "segments": [
+      "seg-0000000000000001.log",
+      "seg-0000000000000002.log"
+    ]
+  }
+}
