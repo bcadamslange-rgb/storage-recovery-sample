@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "key": "one_zero",
+      "value_b64": "AA=="
+    },
+    {
+      "key": "three_zero",
+      "value_b64": "AAAA"
+    },
+    {
+      "key": "two_zero",
+      "value_b64": "AAA="
+    }
+  ],
+  "count": 3
+}
