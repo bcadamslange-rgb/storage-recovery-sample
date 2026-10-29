@@ -1,0 +1,44 @@
+[
+  {
+    "case": "committed_binary_values",
+    "passed": true,
+    "checks": {
+      "exit_status": true,
+      "report_exact_bytes": true,
+      "state_exact_bytes_or_absent": true,
+      "inputs_unchanged": true
+    },
+    "exit_status": 0,
+    "state_sha256": "8f02df532cb9af87886a1723e6bcc0d89f2095270c19240db2af13ec3d566b32",
+    "report_sha256": "54a8fe5bd9f43edaa1abc8bbea77a6c175bc787af612341b3d3a86678decf8ee",
+    "stderr": ""
+  },
+  {
+    "case": "bad_crc_delete_stops_scan",
+    "passed": true,
+    "checks": {
+      "exit_status": true,
+      "report_exact_bytes": true,
+      "state_exact_bytes_or_absent": true,
+      "inputs_unchanged": true
+    },
+    "exit_status": 0,
+    "state_sha256": "ddb41b7316c3d0695512278a4aa88703db7895a2e93fbb9e490476e3a95ed14d",
+    "report_sha256": "549a75935f7f6f22c290aeb870f6002c5eae1b6ffc9cefb94dd5833854546a67",
+    "stderr": ""
+  },
+  {
+    "case": "conflicting_duplicate",
+    "passed": true,
+    "checks": {
+      "exit_status": true,
+      "report_exact_bytes": true,
+      "state_exact_bytes_or_absent": true,
+      "inputs_unchanged": true
+    },
+    "exit_status": 2,
+    "state_sha256": null,
+    "report_sha256": "310743340df36b9af35d695c7837cd40f54e18240bdd54d3e8eaa442be48f36b",
+    "stderr": ""
+  }
+]
